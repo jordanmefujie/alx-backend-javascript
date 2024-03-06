@@ -1,14 +1,10 @@
 export default function iterateThroughObject(reportWithIterator) {
-  let result = '';
-  let iterator = reportWithIterator.next();
+  const employees = [];
 
-  while (!iterator.done) {
-    result += iterator.value + ' | ';
-    iterator = reportWithIterator.next();
+  // eslint-disable-next-line no-restricted-syntax
+  for (const employee of reportWithIterator) {
+    employees.push(employee);
   }
 
-  // Remove the last ' | ' from the result
-  result = result.slice(0, -3);
-
-  return result;
+  return employees.join(' | ');
 }
